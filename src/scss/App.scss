@@ -3,7 +3,8 @@
 @use "./variables";
 
 body {
-	// font-family: "Marck Script", cursive;
 	font-family: "Great Vibes", cursive;
-	height: 4000px;
+	// height: 4000px;
+	color: var(--brown-clr);
+	background: #fff;
 }
