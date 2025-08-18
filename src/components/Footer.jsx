@@ -16,7 +16,7 @@ const Footer = () => {
 				<img src={arrowTopIcon} width={15} alt="" />
 			</button>
 			<p>
-				Site by
+				Сайт від
 				<a
 					className="creator__link"
 					href="https://heeeyooo.studio/"

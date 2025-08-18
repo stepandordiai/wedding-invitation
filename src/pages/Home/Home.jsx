@@ -1,8 +1,23 @@
 import { useEffect, useState } from "react";
 import confetti from "canvas-confetti";
-import img from "/bg.jpg";
+import img from "/bg2.jpg";
 import heartIcon from "/heart2.png";
+import img1 from "/01.JPG";
+import img2 from "/02.JPG";
+import img3 from "/03.JPG";
+import img4 from "/04.JPG";
+import img5 from "/05.JPG";
+
 import "./Home.scss";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/effect-cards";
+
+// import required modules
+import { EffectCards } from "swiper/modules";
 
 const Home = () => {
 	// TODO:
@@ -70,8 +85,8 @@ const Home = () => {
 					<p>&bull;</p>
 					<p>25</p>
 				</div>
+				<img className="home__top-img-bg" src={img} alt="" />
 				<h1 className="home__top-title">Андрій та Наталія</h1>
-				<img className="home__top-img" src={img} alt="" />
 			</div>
 
 			<div>
@@ -182,7 +197,7 @@ const Home = () => {
 					</div>
 				</div>
 			</div>
-			<div className="colors-container">
+			{/* <div className="colors-container">
 				<p className="page-title">Дрес-код</p>
 				<div>
 					<p className="pepe">
@@ -194,6 +209,31 @@ const Home = () => {
 						<div></div>
 					</div>
 				</div>
+			</div> */}
+			<div className="gallery">
+				<p className="page-title">Галерея</p>
+				<Swiper
+					effect={"cards"}
+					grabCursor={true}
+					modules={[EffectCards]}
+					className="mySwiper"
+				>
+					<SwiperSlide className="slide">
+						<img src={img1} alt="" loading="lazy" />
+					</SwiperSlide>
+					<SwiperSlide className="slide">
+						<img src={img2} alt="" loading="lazy" />
+					</SwiperSlide>
+					<SwiperSlide className="slide">
+						<img src={img3} alt="" loading="lazy" />
+					</SwiperSlide>
+					<SwiperSlide className="slide">
+						<img src={img4} alt="" loading="lazy" />
+					</SwiperSlide>
+					<SwiperSlide className="slide">
+						<img src={img5} alt="" loading="lazy" />
+					</SwiperSlide>
+				</Swiper>
 			</div>
 			<div className="date" id="date">
 				<div>
