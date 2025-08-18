@@ -1,0 +1,153 @@
+.home {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 100px;
+}
+
+.home__top {
+	position: relative;
+	// background: rgb(255, 255, 247);
+	min-height: 100svh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	color: var(--brown-clr);
+}
+
+.home__top-img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+	z-index: -1;
+}
+
+.home__top-title {
+	font-size: 6vw;
+}
+
+.calendar {
+	// font-family: "Marck Script", cursive;
+	font-family: "Playpen Sans", cursive;
+	display: grid;
+	grid-template-columns: repeat(7, 50px);
+	grid-template-rows: repeat(6, 50px);
+	text-align: center;
+	// margin: 100px 0;
+	padding: 25px;
+	border: 1px solid var(--brown-clr);
+	border-radius: 25px;
+	font-weight: 300;
+	color: var(--brown-clr);
+
+	div {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	div:nth-of-type(-n + 7) {
+		// font-family: "Marck Script", cursive;
+		border-bottom: 1px solid var(--brown-clr);
+		font-weight: 500;
+	}
+}
+
+.calendar-wrapper {
+	position: relative;
+}
+
+.calendar-top {
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: #fff;
+	font-family: "Playpen Sans", cursive;
+	padding: 0 25px;
+	width: max-content;
+	font-size: clamp(1rem, 2vw, 1.25rem);
+	color: var(--brown-clr);
+}
+
+.target-time {
+	position: relative;
+}
+
+.calendar-heart {
+	position: absolute;
+	top: 55%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.date {
+	// font-family: "Marck Script", cursive;
+	font-family: "Playpen Sans", cursive;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	gap: 10px;
+	// font-size: 3rem;
+	color: black;
+	margin-bottom: 50px;
+}
+
+.pepe {
+	font-size: clamp(1.75rem, 4vw, 2.25rem);
+	text-align: center;
+	text-decoration: underline;
+	text-decoration-color: rgb(239, 247, 231);
+	text-decoration-thickness: 5px;
+	text-decoration-skip-ink: none;
+	text-decoration-line: underline;
+	padding: 0 10px;
+	color: rgb(102, 93, 73);
+
+	span {
+		font-size: clamp(2.25rem, 4vw, 3.75rem);
+	}
+}
+
+.addresses {
+	display: flex;
+	gap: 50px;
+	width: 100%;
+	padding: 0 50px;
+}
+
+.address {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+
+	p {
+		font-size: 2rem;
+		font-size: clamp(1.75rem, 4vw, 2.25rem);
+		text-align: center;
+		text-decoration: underline;
+		text-decoration-color: var(--olive-clr);
+		text-decoration-thickness: 5px;
+		text-decoration-skip-ink: none;
+		text-decoration-line: underline;
+	}
+}
+
+.map {
+	height: 400px;
+}
+
+.address__link {
+	font-family: "Playpen Sans", cursive;
+}
+
+@media screen and (width <= 500px) {
+	.calendar {
+		grid-template-columns: repeat(7, 40px);
+		grid-template-rows: repeat(6, 40px);
+	}
+}
