@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import confetti from "canvas-confetti";
-import img from "/bg2.jpg";
+import img from "/bg.jpg";
 import heartIcon from "/heart2.png";
 import img1 from "/01.JPG";
 import img2 from "/02.JPG";
@@ -78,15 +78,25 @@ const Home = () => {
 	return (
 		<main className="home">
 			<div className="home__top">
-				<div className="home__top-date">
-					<p>28</p>
-					<p>&bull;</p>
-					<p>08</p>
-					<p>&bull;</p>
-					<p>25</p>
-				</div>
 				<img className="home__top-img-bg" src={img} alt="" />
-				<h1 className="home__top-title">Андрій та Наталія</h1>
+				<div className="home__top-inner">
+					<div className="home__top-logo">
+						А<span>&</span>Н
+					</div>
+					<div className="divider"></div>
+					<div className="home__top-date">
+						<p>28</p>
+						<p>&bull;</p>
+						<p>08</p>
+						<p>&bull;</p>
+						<p>25</p>
+					</div>
+					<h1 className="home__top-title">
+						<span>Андрій</span>
+						<span> та </span>
+						<span>Наталія</span>
+					</h1>
+				</div>
 			</div>
 
 			<div>
@@ -161,7 +171,9 @@ const Home = () => {
 						<p className="address__info">
 							Православний монастир св. Кирила і Мефодія
 						</p>
-						<p className="address__info">Hořovičky 79, 270 04 Hořovičky</p>
+						<p style={{ marginBottom: 10 }} className="address__info">
+							Hořovičky 79, 270 04 Hořovičky
+						</p>
 						<iframe
 							className="map"
 							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2632.8214000197636!2d13.530101612005327!3d50.156151508391744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470a41402926cbe7%3A0xbb620047900bbb55!2sPravoslavn%C3%BD%20Monast%C3%BDr%20sv.%20Cyrila%20a%20Metod%C4%9Bje!5e1!3m2!1sen!2scz!4v1755459539998!5m2!1sen!2scz"
@@ -181,7 +193,9 @@ const Home = () => {
 							<span>16:00</span>
 						</p>
 						<p className="address__info">Ресторан "Dergi Praha"</p>
-						<p className="address__info">Revoluční 25, 110 00 Staré Město</p>
+						<p style={{ marginBottom: 10 }} className="address__info">
+							Revoluční 25, 110 00 Staré Město
+						</p>
 						<iframe
 							className="map"
 							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5273.010388171266!2d14.422204873322281!3d50.08922209402551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b95452691e2cf%3A0x27150a1da02a743b!2sDergi%20Praha!5e1!3m2!1sen!2scz!4v1755497626955!5m2!1sen!2scz"
@@ -219,40 +233,44 @@ const Home = () => {
 					className="mySwiper"
 				>
 					<SwiperSlide className="slide">
-						<img src={img1} alt="" loading="lazy" />
+						<img src={img1} alt="" />
 					</SwiperSlide>
 					<SwiperSlide className="slide">
-						<img src={img2} alt="" loading="lazy" />
+						<img src={img2} alt="" />
 					</SwiperSlide>
 					<SwiperSlide className="slide">
-						<img src={img3} alt="" loading="lazy" />
+						<img src={img3} alt="" />
 					</SwiperSlide>
 					<SwiperSlide className="slide">
-						<img src={img4} alt="" loading="lazy" />
+						<img src={img4} alt="" />
 					</SwiperSlide>
 					<SwiperSlide className="slide">
-						<img src={img5} alt="" loading="lazy" />
+						<img src={img5} alt="" />
 					</SwiperSlide>
 				</Swiper>
 			</div>
-			<div className="date" id="date">
-				<div>
-					<p>{days}</p>
-					<p>днів</p>
-				</div>
-				<div>
-					<p>{hours}</p>
-					<p>годин(а)</p>
-				</div>
-				<div>
-					<p>{minutes}</p>
-					<p>хвилин(а)</p>
-				</div>
-				<div>
-					<p>{seconds}</p>
-					<p>секунд(а)</p>
+			<div className="date-container">
+				<p className="page-title">Святкування почнеться через:</p>
+				<div className="date" id="date">
+					<div>
+						<p>{days}</p>
+						<p>днів</p>
+					</div>
+					<div>
+						<p>{hours}</p>
+						<p>годин(а)</p>
+					</div>
+					<div>
+						<p>{minutes}</p>
+						<p>хвилин(а)</p>
+					</div>
+					<div>
+						<p>{seconds}</p>
+						<p>секунд(а)</p>
+					</div>
 				</div>
 			</div>
+			<p className="page-title">Святкуйте з нами!</p>
 		</main>
 	);
 };
