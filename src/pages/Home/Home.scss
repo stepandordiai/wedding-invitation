@@ -214,15 +214,56 @@
 
 .addresses {
 	display: flex;
+	flex-direction: column;
+	// grid-template-columns: repeat(2, 100%);
 	gap: 50px;
 	width: 100%;
 	padding: 0 50px;
 }
 
 .address {
-	width: 100%;
+	position: relative;
+	width: 50%;
 	display: flex;
 	flex-direction: column;
+
+	&:nth-child(even) {
+		margin-left: auto;
+		&:not(:nth-last-child(1)) {
+			&::before {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				transform: translateX(-100%) rotate(20deg);
+				background-image: url(./../../../public/Vector-1.svg);
+				background-size: contain;
+				background-position: left;
+				background-repeat: no-repeat;
+				width: 300px;
+				height: 300px;
+			}
+		}
+	}
+
+	&:nth-child(odd) {
+		margin-right: auto;
+		&:not(:nth-last-child(1)) {
+			&::after {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				transform: translateX(100%) rotate(-20deg);
+				background-image: url(./../../../public/Vector.svg);
+				background-size: contain;
+				background-position: right;
+				background-repeat: no-repeat;
+				width: 300px;
+				height: 300px;
+			}
+		}
+	}
 }
 
 .address__title {
@@ -311,6 +352,24 @@
 	.addresses {
 		padding: 0 10px;
 		flex-direction: column;
+	}
+
+	.address {
+		width: 100%;
+
+		&:not(:nth-last-child(1)) {
+			&:nth-child(even) {
+				&::before {
+					display: none;
+				}
+			}
+
+			&:nth-child(odd) {
+				&::after {
+					display: none;
+				}
+			}
+		}
 	}
 }
 
